@@ -12,22 +12,78 @@
 
 <body>
   <script type="module">
-    import Modal from './index.js';
+     import Modal from './index.js';
     import createElement from '../../assets/lib/create-element.js';
 
-    window.openModal = () => {
+     window.openModal = () => {
       let modal = new Modal();
       modal.setTitle('Modal Title');
-      modal.setBody(createElement('<div>Тело модального окна</div>'));
+     // modal.setBody(createElement('<div>Тело модального окна</div>'));
 
-      modal.open();
+      modal.open(); 
+
+      //DEL DEL
+
+      console.log('modal=' ,modal);
+
+     // console.log(1111);
+    
     }
+
+    ////////////////
+
+   // console.log('start111');
+
+   
+
+  //////////////////////title
+
+  
+
+  ////////////////////////BODY
+
+
+
+  ///////////////////CLOSE
+
+
+  
+  ////////////////////////
+
+  
+ //////------/////////
+
+
+
+/*  ObjModal.open();
+ ObjModal.setTitle();
+ ObjModal.setBody();
+ ObjModal.close(); */
+
+
+/*  class Modal1 {  //333333333333333333
+  constructor() {
+
+  
+let modalOne = new Modal1();
+
+modalOne.open();
+modalOne.setTitle('Modal Title');
+modalOne.setBody(createElement('<div>Тело модального окна</div>'));
+modalOne.close(); */
+
+//console.log('CreEl', createElement('<div>Тело модального окна</div>'));
+
+//console.log('<div>Тело модального окна</div>');
+
+
+    
   </script>
 
   <div class="container">
-    <button class='button' onclick="openModal()" style="background: white; color: black;padding: 10px">
+ <button class='button' onclick="openModal()" style="background: white; color: black;padding: 10px">
       Нажми меня, чтобы открыть модальное окно
-    </button>
+    </button> 
   </div>
 
 
