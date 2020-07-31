@@ -116,6 +116,7 @@ export default class Cart {
     for (let { product, count } of this.cartItems) {
       this.modalBody.append(this.renderProduct(product, count));
     }
+<<<<<<< HEAD
 
     this.modalBody.append(this.renderOrderForm());
 
@@ -133,6 +134,36 @@ export default class Cart {
 
     this.modal.open();
   }
+=======
+
+    this.modalBody.append(this.renderOrderForm());
+
+    this.modalBody.addEventListener("click", this.onModalBodyClick);
+
+    this.modalBody.querySelector("form").onsubmit = (event) => this.onSubmit(event);
+
+    this.modal.setBody(this.modalBody);
+
+    // when modal is closed, we forget about it, don't update it any more
+    this.modal.elem.addEventListener('modal-close', () => {
+      this.modal = null;
+      this.modalBody = null;
+    });
+
+    this.modal.open();
+  }
+
+  onModalBodyClick = (event) => {
+    if (event.target.closest(".cart-counter__button")) {
+      let productElem = event.target.closest("[data-product-id]");
+      let productId = productElem.dataset.productId;
+      this.updateProductCount(
+        productId,
+        event.target.closest(".cart-counter__button_plus") ? 1 : -1
+      );
+    }
+  };
+>>>>>>> f0d750378fdcd4859b940653ad700efddb505d75
 
   onProductUpdate({product, count}) {
     this.cartIcon.update(this);
@@ -192,4 +223,3 @@ export default class Cart {
     this.cartIcon.elem.onclick = () => this.renderModal();
   }
 }
-
